@@ -1,0 +1,57 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <string>
+
+
+void draw_man(int wrong_ans) {
+    
+    std::string l_head = " ";
+    std::string r_head = l_head;
+    std::string body = l_head;
+    std::string l_arm = l_head;
+    std::string r_arm = l_head;
+    std::string l_leg = l_head;
+    std::string r_leg = l_head;
+    
+    int i = 0;
+    
+    while(i < wrong_ans) {
+        i++;
+        switch(i) {
+            case 1:
+                l_head = "(";
+                break;
+            case 2:
+                r_head = ")";
+                break;
+            case 3:
+                body = "l";
+                break;
+            case 4:
+                l_arm = "/";
+                break;
+            case 5:
+                r_arm = "\\";
+                break;
+            case 6:
+                l_leg = "/";
+                break;
+            case 7:
+                r_leg = "\\";
+                break;
+        }
+    }
+    
+    std::cout << "         _____\n";
+    std::cout << "         |    |\n";
+    std::cout << "        " << l_head << r_head <<"    |\n";
+    std::cout << "       " << l_arm << body << r_arm << "    |\n";
+    std::cout << "        " << l_leg << r_leg << "    |\n";
+    std::cout << "        ______|______\n";
+}
+
+
+int main() {
+    
+    return 0;
+}
