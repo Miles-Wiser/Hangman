@@ -50,6 +50,16 @@ void draw_man(int wrong_ans) {
     std::cout << "        ______|______\n\n";
 }
 
+
+std::string fun_user_guess() {
+    std::string user_guess;
+    std::cout << "Guess a letter: ";
+    std::cin >> user_guess;
+    std::cout << "\n\n";
+    
+    return user_guess;
+}
+
 int fun_display_word(std::string user_guess, int wrong_ans) {
     std::string letter_1 = "_ ";
     std::string letter_2 = "_ ";
@@ -68,14 +78,14 @@ int fun_display_word(std::string user_guess, int wrong_ans) {
     else {
         std::cout << "Your guess is correct.\n";
     }
-    
+    draw_man(wrong_ans);
     return wrong_ans;
 }
 
 int main() {
     int wrong_ans = 0;
-    draw_man(wrong_ans);
-    fun_display_word("_ _ _ _ _ ", wrong_ans);
-    
+
+    wrong_ans = fun_display_word(fun_user_guess(), wrong_ans);
+
     return 0;
 }
