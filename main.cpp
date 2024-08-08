@@ -57,6 +57,12 @@ std::string fun_user_guess() {
     std::cin >> user_guess;
     std::cout << "\n\n";
     
+    while(std::size(user_guess) > 1) {
+        std::cout << "Please only enter one letter: ";
+        std::cin >> user_guess;
+        std::cout << "\n\n";
+    }
+    
     return user_guess;
 }
 
@@ -82,10 +88,17 @@ int fun_display_word(std::string user_guess, int wrong_ans) {
     return wrong_ans;
 }
 
+
 int main() {
     int wrong_ans = 0;
-
+    
+    /*
+    while(wrong_ans < 7) {
+        wrong_ans = fun_display_word(fun_user_guess(), wrong_ans);
+    }
+    */
+    
     wrong_ans = fun_display_word(fun_user_guess(), wrong_ans);
-
+    
     return 0;
 }
